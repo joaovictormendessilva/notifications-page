@@ -1,0 +1,143 @@
+.notifications{
+    background-color: var(--white);
+    width: 720px;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+
+/* Header */
+.notifications .notificationsHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.notifications .notificationsHeader .notificationsTitleAndQuantity{
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+.notifications .notificationsHeader .notificationsTitleAndQuantity h1{
+    font-size: 24px;
+}
+
+.notifications .notificationsHeader .notificationsTitleAndQuantity span{
+    color: var(--white);
+    background-color: var(--blue);
+    padding: 0.1rem 0.7rem;
+    border-radius: 8px;
+}
+
+.notifications .notificationsHeader .markAllAsReadButton button{
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: var(--grayish-blue);
+    cursor: pointer;
+}
+
+.notifications .notificationsHeader .markAllAsReadButton button:active{
+    color: var(--blue);
+}
+
+/* Notification Box */
+
+.notifications .notificationBox{
+    background-color: var(--very-light-grayish-blue);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.notifications .notificationBox a{
+    text-decoration: none;
+}
+
+.notifications .notificationBox .avatarAndActions{
+    display: flex;
+    gap: 1rem;
+}
+
+/* Avatar */
+.notifications .notificationBox .avatar img{
+    width: 48px;
+}
+
+/* Actions */
+.notifications .notificationBox .action{
+    color: var(--dark-grayish-blue);
+}
+
+/* Group Title and Post Title */
+
+.notifications .notificationBox .postTitle,
+.notifications .notificationBox .groupTitle{
+    color: var(--dark-grayish-blue);
+    font-weight: bold;
+}
+
+.notifications .notificationBox .groupTitle:active,
+.notifications .notificationBox .postTitle:active{
+    color: var(--blue);
+}
+
+.notifications .notificationBox .notificationContentAndPicure{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Actions and Date */
+.notifications .notificationBox .actionsAndDate{
+    display: flex;
+    flex-direction: column;
+}
+
+.notifications .notificationBox .actionsAndDate .username{
+    color: black;
+}
+
+.notifications .notificationBox .actionsAndDate .username:active{
+    color: var(--blue);
+}
+
+/* Date time notification */
+.notifications .notificationBox .dateTimeNotificaiton{
+    color: var(--grayish-blue);
+}
+
+/* Private message */
+.notifications .notificationBox .privateMessage{
+    background-color: var(--white);
+    color: var(--dark-grayish-blue);
+    padding: 1rem;
+    border: solid 1px var(--light-grayish-blue-2);
+    border-radius: 5px;
+    margin-top: 0.875rem;
+}
+
+.notifications .notificationBox .privateMessage:active{
+    background-color: var(--light-grayish-blue-1);
+}
+
+/* Notification picture */
+
+.notifications .notificationBox .notificationPicture img {
+    width: 48px;
+}
+
+.notifications .notificationBox .notificationPicture img:active {
+    border: solid 2px var(--grayish-blue);
+    border-radius: 10px;
+}
+
+/* Notification dot */
+.notifications .notificationDot{
+    height: 7px;
+  width: 7px;
+  background-color: var(--red);
+  border-radius: 50%;
+  display: inline-block;
+}
