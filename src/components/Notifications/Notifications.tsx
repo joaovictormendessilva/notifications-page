@@ -8,7 +8,7 @@ import { data } from '../../data'
 export function Notifications() {
 
     const [unreadNotificationsCounter, setUnreadNotificationsCounter] = useState<number>(0)
-    const [sentinel, setSentinel] = useState(false);
+    const [sentinel, setSentinel] = useState<boolean>(false);
 
     useEffect(() => {
         const count = data.reduce((total, index) => index.active ? total + 1 : total, 0)
