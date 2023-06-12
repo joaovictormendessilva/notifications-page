@@ -136,7 +136,7 @@
 
 /* Notification dot */
 .notifications .notificationDot{
-    height: 7px;
+  height: 7px;
   width: 7px;
   background-color: var(--red);
   border-radius: 50%;
@@ -146,4 +146,10 @@
 /* Notification Read Background */
 .notificationRead{
     background-color: var(--very-light-grayish-blue);
+}
+
+@media (max-width: 500px) {
+    .notifications{
+        margin: 0;
+    }
 }
