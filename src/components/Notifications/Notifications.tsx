@@ -1,13 +1,20 @@
 // CSS
 import styles from './Notifications.module.css'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { data } from '../../data'
 
 export function Notifications() {
 
     const [unreadNotificationsCounter, setUnreadNotificationsCounter] = useState<number>(0)
+    const [sentinel, setSentinel] = useState(false);
+
+    useEffect(() => {
+        const count = data.reduce((total, index) => index.active ? total + 1 : total, 0)
+        setUnreadNotificationsCounter(count)
+    }, [sentinel])
+
 
     return (
         <div className={styles.notifications}>
@@ -26,8 +33,8 @@ export function Notifications() {
             </div>
 
             {data.map((notification) => (
-                <div key={notification.id}>
-                    <div className={styles.notificationBox}>
+                <div key={notification.id} onClick={() => {notification.active = !notification.active; setSentinel(!sentinel)}}>
+                    <div className={`${styles.notificationBox} ${notification.active && styles.notificationRead}`}>
                         <div className={styles.notificationContentAndPicure}>
                             <div className={styles.avatarAndActions}>
                                 <div className={styles.avatar}>
@@ -51,9 +58,9 @@ export function Notifications() {
                                                 {notification.group}
                                             </a>
                                             {notification.active && (
-                                            <>
-                                                {" "}<span className={styles.notificationDot}></span>
-                                            </>
+                                                <>
+                                                    {" "}<span className={styles.notificationDot}></span>
+                                                </>
                                             )}
                                         </p>
 
