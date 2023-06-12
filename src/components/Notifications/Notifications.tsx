@@ -15,6 +15,13 @@ export function Notifications() {
         setUnreadNotificationsCounter(count)
     }, [sentinel])
 
+    const handleMarkAllAsRead = () => {
+        data.forEach((data) => {
+            return data.active = false
+        })
+        setSentinel(!sentinel)
+    }
+
 
     return (
         <div className={styles.notifications}>
@@ -26,7 +33,7 @@ export function Notifications() {
                     </span>
                 </div>
                 <div className={styles.markAllAsReadButton}>
-                    <button>
+                    <button onClick={handleMarkAllAsRead}>
                         Mark all as read
                     </button>
                 </div>
